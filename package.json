@@ -1,0 +1,29 @@
+{
+  "name": "module-creater",
+  "version": "1.0.0",
+  "main": "lib/bundle.cjs.js",
+  "module": "lib/bundle.es.js",
+  "typings": "lib/typings/mian.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "pack:dev": "rollup --config rollup.config.ts --environment NODE_ENV:development --configPlugin typescript",
+    "pack:pro": "rollup --config rollup.config.ts --environment NODE_ENV:production --configPlugin typescript",
+    "start": "npm run pack:dev && node ./lib/bundle.cjs.js",
+    "build": "npm run pack:pro"
+  },
+  "devDependencies": {
+    "@rollup/plugin-replace": "4.0.0",
+    "@rollup/plugin-typescript": "8.3.3",
+    "@types/crypto-js": "4.1.1",
+    "@types/node": "18.6.1",
+    "@types/ws": "8.5.3",
+    "rollup": "2.75.7",
+    "rollup-plugin-commonjs": "10.1.0",
+    "tslib": "2.4.0",
+    "typescript": "4.7.4"
+  },
+  "dependencies": {
+    "crypto-js": "4.1.1",
+    "ws": "8.8.1"
+  }
+}
